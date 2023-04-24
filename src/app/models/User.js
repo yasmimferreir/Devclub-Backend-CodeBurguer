@@ -10,7 +10,7 @@ class User extends Model {
         admin: Sequelize.BOOLEAN,
       },
       {
-        Sequelize,
+        sequelize,
       }
     );
   }
