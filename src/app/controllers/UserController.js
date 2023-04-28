@@ -9,17 +9,21 @@ class UserController {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string().email(),
-      passwordHash: Yup.string().required().min(6),
+      password_hash: Yup.string().required().min(6),
       admin: Yup.boolean(),
     });
 
-    const { name, email, passwordHash, admin } = request.body;
+    if (!(await schema.isValid(request.body))) {
+      return response.status(400).json({ error: 'Verifique se seus dados estão corretos' });
+    }
+
+    const { name, email, password_hash, admin } = request.body;
 
     const user = await User.create({
       id: v4(),
       name,
       email,
-      passwordHash,
+      password_hash,
       admin,
     });
 

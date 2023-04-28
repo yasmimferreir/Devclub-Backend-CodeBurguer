@@ -13,6 +13,7 @@
   "rules": {
     "react/jsx-filename-extension": [
       "warn",
+      "never",
       {
         "extensions": [".js", ".jsx"]
       }
