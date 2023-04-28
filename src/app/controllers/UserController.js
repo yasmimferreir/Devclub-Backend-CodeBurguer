@@ -13,8 +13,14 @@ class UserController {
       admin: Yup.boolean(),
     });
 
-    if (!(await schema.isValid(request.body))) {
-      return response.status(400).json({ error: 'Verifique se seus dados estão corretos' });
+    //if (!(await schema.isValid(request.body))) {
+    // return response.status(400).json({ error: 'Verifique se seus dados estão corretos' });
+    //}
+
+    try {
+      await schema.validateSync(request.body, { abortEarly: false });
+    } catch (err) {
+      return response.status(400).json({ error: err.errors });
     }
 
     const { name, email, password_hash, admin } = request.body;
