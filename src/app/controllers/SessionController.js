@@ -13,7 +13,9 @@ class SessionController {
       return response.status(401).json({ error: 'Make sure your password or email are correct' });
     };
 
-    if (!(await schema.isValid(request.body))) userEmailOrPasswordIncorrect();
+    if (!(await schema.isValid(request.body))) {
+      userEmailOrPasswordIncorrect();
+    }
 
     const { email, password } = request.body;
 
@@ -21,9 +23,13 @@ class SessionController {
       where: { email },
     });
 
-    if (!user) userEmailOrPasswordIncorrect();
+    if (!user) {
+      userEmailOrPasswordIncorrect();
+    }
 
-    if (!(await user.checkPassword(password))) userEmailOrPasswordIncorrect();
+    if (!(await user.checkPassword(password))) {
+      userEmailOrPasswordIncorrect();
+    }
 
     return response.json({ id: user.id, email, name: user.name, admin: user.admin });
   }
