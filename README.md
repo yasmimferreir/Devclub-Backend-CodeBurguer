@@ -1,7 +1,9 @@
 # CodeBurguer-Backend
-🪐 Back-end Development - CodeBurger
+🪐 Back-end Development - CodeBurger 
 
 ### 📑Explicação
+
+Projeto CodeBurguer - Parte I
 
 Projeto focado nas habilidades Back-end, desenvolvimento de sistema Web FullStack, projeto do curso DevClub, 
 contém diversos sistemas de software, para o sistema web ser completo e funcional. 
@@ -9,6 +11,17 @@ O projeto contém uma página de Login e cadastro para entrar no sistema, págin
 requerimento verifica se o email e senha são cadastrados e se são validos, 
 caso validos e cadastrados são direcionados para um sistema web com produtos, 
 podendo escolher quantidades, são calculado os preços. Utilização de banco de dados Postgres, express, docker e entre outros.
+<br>
+
+🚀 Projeto 
+<br>
+
+<img src="https://user-images.githubusercontent.com/97356148/221013692-00897a1e-05f8-4d21-b022-4a7aca8bf709.svg" width="900px">
+
+<br>
+
+
+
 
 ⚔️Ferramentas de Software usadas:
 
