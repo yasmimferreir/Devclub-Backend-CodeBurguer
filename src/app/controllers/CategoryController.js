@@ -85,8 +85,21 @@ class CategoryController {
 
     return response.status(200).json();
   }
+
   catch(err) {
     console.log(err);
+  }
+
+  async delete(request, response) {
+    const { id } = await request.body;
+
+    try {
+      await Category.destroy({ where: { id } });
+
+      return response.status(200).json({ message: 'Categoria deletada com sucesso' });
+    } catch (error) {
+      return response.status(500).json({ message: 'Erro ao deletar categoria', error });
+    }
   }
 }
 
